@@ -36,7 +36,7 @@
     <description>A maven project to study ssh</description>
 
     <!-- 项目子模块-->
-    <modules>
+   <modules>
         <module>ssh_dao</module>
         <module>portal</module>
         <module>system-util</module>
