@@ -1,0 +1,342 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
+
+    <!-- 父项目的坐标。如果项目中没有规定某个元素的值，那么父项目中的对应值即为项目的默认值。
+         坐标包括group ID，artifact ID和 version。 -->
+
+
+    <!-- 声明项目描述符遵循哪一个POM模型版本。模型本身的版本很少改变，虽然如此，但它仍然是必不可少的，
+         这是为了当Maven引入了新的特性或者其他模型变更的时候，确保稳定性。 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目的全球唯一标识符，通常使用全限定的包名区分该项目和其他项目。并且构建时生成的路径也是由此生成，
+         如com.mycompany.app生成的相对路径为：/com/mycompany/app -->
+    <groupId>com.lstfight</groupId>
+
+    <!-- 构件的标识符，它和group ID一起唯一标识一个构件。换句话说，你不能有两个不同的项目拥有同样的artifact ID
+         和groupID；在某个特定的group ID下，artifact ID也必须是唯一的。构件是项目产生的或使用的一个东西，Maven
+         为项目产生的构件包括：JARs，源码，二进制发布和WARs等。 -->
+    <artifactId>ssh_demo</artifactId>
+
+    <!-- 项目产生的构件类型，例如jar、war、ear、pom。插件可以创建他们自己的构件类型，所以前面列的不是全部构件类型 -->
+    <packaging>pom</packaging>
+
+    <!-- 项目当前版本，格式为:主版本.次版本.增量版本-限定版本号 -->
+    <version>1.0.0-SNAPSHOT</version>
+
+    <!-- 项目的名称, Maven产生的文档用 -->
+    <name>ssh_demo</name>
+
+    <!-- 项目主页的URL, Maven产生的文档用 -->
+
+    <!-- 项目的详细描述, Maven 产生的文档用。 当这个元素能够用HTML格式描述时（例如，CDATA中的文本会被解析器忽略，
+         就可以包含HTML标签）， 不鼓励使用纯文本描述。如果你需要修改产生的web站点的索引页面，你应该修改你自己的
+         索引页文件，而不是调整这里的文档。 -->
+    <description>A maven project to study ssh</description>
+
+    <!-- 项目子模块-->
+    <modules>
+        <module>ssh_dao</module>
+        <module>portal</module>
+        <module>system-util</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.bulid.sourceEncodeing>UTF-8</project.bulid.sourceEncodeing>
+        <spring.version>4.3.18.RELEASE</spring.version>
+        <hibernate.version>5.0.1.Final</hibernate.version>
+        <spring-data-jpa.version>1.11.13.RELEASE</spring-data-jpa.version>
+        <oracle.version>11.2.0.3</oracle.version>
+        <dbcp.version>2.4.0</dbcp.version>
+        <commons-pool.version>2.4.2</commons-pool.version>
+        <logback.version>1.1.7</logback.version>
+        <SLF4j.version>1.7.21</SLF4j.version>
+        <aspectj.version>1.8.13</aspectj.version>
+        <servlet.version>3.1.0</servlet.version>
+        <fastjosn.version>1.2.47</fastjosn.version>
+        <jackson.version>2.9.5</jackson.version>
+        <spring-security.version>4.2.7.RELEASE</spring-security.version>
+        <mysql.version>5.1.46</mysql.version>
+        <cglib.version>3.1</cglib.version>
+        <lombok.version>1.16.20</lombok.version>
+    </properties>
+
+    <!-- 描述了这个项目构建环境中的前提条件。 -->
+
+    <!-- 项目的问题管理系统(Bugzilla, Jira, Scarab,或任何你喜欢的问题管理系统)的名称和URL，本例为 jira -->
+
+    <!-- 项目持续集成信息 -->
+
+    <!-- 项目创建年份，4位数字。当产生版权信息时需要使用这个值。 -->
+
+    <!-- 项目相关邮件列表信息 -->
+
+    <!-- 项目开发者列表 -->
+
+    <!-- 项目的其他贡献者列表 -->
+
+    <!-- 该元素描述了项目所有License列表。 应该只列出该项目的license列表，不要列出依赖项目的 license列表。
+         如果列出多个license，用户可以选择它们中的一个而不是接受所有license。 -->
+
+    <!-- SCM(Source Control Management)标签允许你配置你的代码库，供Maven web站点和其它插件使用。 -->
+
+    <!-- 描述项目所属组织的各种属性。Maven产生的文档用 -->
+
+    <!-- 构建项目需要的信息 -->
+    <build>
+        <!-- 该元素设置了项目源码目录，当构建项目的时候，构建系统会编译目录里的源码。该路径是相对
+             于pom.xml的相对路径。 -->
+
+        <!-- 该元素设置了项目脚本源码目录，该目录和源码目录不同：绝大多数情况下，该目录下的内容会
+             被拷贝到输出目录(因为脚本是被解释的，而不是被编译的)。 -->
+
+        <!-- 该元素设置了项目单元测试使用的源码目录，当测试项目的时候，构建系统会编译目录里的源码。
+             该路径是相对于pom.xml的相对路径。 -->
+
+        <!-- 被编译过的应用程序class文件存放的目录。 -->
+
+
+        <!-- 被编译过的测试class文件存放的目录。 -->
+
+
+        <!-- 使用来自该项目的一系列构建扩展 -->
+
+
+        <!-- 当项目没有规定目标（Maven2 叫做阶段）时的默认值 -->
+
+
+        <!-- 这个元素描述了项目相关的所有资源路径列表，例如和项目相关的属性文件，这些资源被包含在
+             最终的打包文件里。 -->
+
+
+        <!-- 这个元素描述了单元测试相关的所有资源路径，例如和单元测试相关的属性文件。 -->
+
+
+        <!-- 构建产生的所有文件存放的目录 -->
+
+
+        <!-- 产生的构件的文件名，默认值是${artifactId}-${version}。 -->
+
+
+        <!-- 当filtering开关打开时，使用到的过滤器属性文件列表 -->
+
+
+        <!-- 子项目可以引用的默认插件信息。该插件配置项直到被引用时才会被解析或绑定到生命周期。给定插件的任何本
+             地配置都会覆盖这里的配置 -->
+
+
+        <!-- 该项目使用的插件列表 。 -->
+
+    </build>
+
+    <!-- 在列的项目构建profile，如果被激活，会修改构建处理 -->
+    <profiles>
+
+    </profiles>
+
+
+    <!-- 发现依赖和扩展的远程仓库列表。 -->
+    <repositories>
+        <repository>
+            <id>maven-ali</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public//</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- 发现插件的远程仓库列表，这些插件用于构建和报表 -->
+    <pluginRepositories>
+
+    </pluginRepositories>
+
+    <!-- 该元素描述了项目相关的所有依赖。 这些依赖组成了项目构建过程中的一个个环节。它们自动从项目定义的仓库中下载。
+         要获取更多信息，请看项目依赖机制。 -->
+    <dependencies>
+
+    </dependencies>
+
+    <!-- 该元素描述使用报表插件产生报表的规范。当用户执行“mvn site”，这些报表就会运行。 在页面导航栏能看到所有报表的链接。 -->
+    <reporting>
+
+    </reporting>
+
+    <!-- 继承自该项目的所有子项目的默认依赖信息。这部分的依赖信息不会被立即解析,而是当子项目声明一个依赖
+        （必须描述group ID和artifact ID信息），如果group ID和artifact ID以外的一些信息没有描述，则通过
+            group ID和artifact ID匹配到这里的依赖，并使用这里的依赖信息。 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!--     <dependency>
+                     <groupId>org.springframework</groupId>
+                     <artifactId>spring-core</artifactId>
+                     <version>${spring.version}</version>
+                 </dependency>-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!--           <dependency>
+                           <groupId>org.springframework</groupId>
+                           <artifactId>spring-orm</artifactId>
+                           <version>${spring.version}</version>
+                       </dependency>-->
+
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data-jpa.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+
+            <!-- 驱动 mysql or Oracle-->
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- 数据库连接池 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${commons-pool.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-dbcp2</artifactId>
+                <version>${dbcp.version}</version>
+            </dependency>
+            <!-- 日志框架 -->
+            <!-- jcl-over-slf4j 可以将默认的jcl日志处理重定向到slf4j -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>jcl-over-slf4j</artifactId>
+                <version>${SLF4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
+            <!--切面aop-->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib-nodep</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+
+            <!-- web层 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet.version}</version>
+            </dependency>
+
+            <!-- Spring security -->
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring-security.version}</version>
+            </dependency>
+            <!-- 解决security与spring依赖冲突 -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>4.3.18.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- json工具-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjosn.version}</version>
+            </dependency>
+
+            <!-- databind 包括了core和annotation-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <!--工具-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!--测试-->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <!-- 项目分发信息，在执行mvn deploy后表示要发布的位置。有了这些信息就可以把网站部署到远程服务器或者
+         把构件部署到远程仓库。 -->
+    <distributionManagement>
+        <!-- 部署项目产生的构件到远程仓库需要的信息 -->
+
+    </distributionManagement>
+
+    <!-- 以值替代名称，Properties可以在整个POM中使用，也可以作为触发条件（见settings.xml配置文件里
+         activation元素的说明）。格式是<name>value</name>。 -->
+
+</project>
